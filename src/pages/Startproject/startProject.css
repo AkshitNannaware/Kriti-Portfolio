@@ -1,0 +1,264 @@
+/* Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Page Base */
+.start-project-page {
+    background-color: #08080f;
+    min-height: 10vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    margin-bottom: 5px;
+}
+
+/* Project Info Section */
+.project-info-section {
+    width: 800px;
+    margin-left: 174px;
+}
+
+/* Main Section */
+.project-main {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 2rem;
+}
+
+/* Container */
+.project-container {
+    max-width: 1200px;
+    width: 100%;
+    margin: 0 auto;
+    padding: 2rem;
+    text-align: center;
+    border-radius: 55px;
+    background: linear-gradient(145deg, #0d0a1c 0%, #0a0810 100%);
+}
+
+/* Info Section */
+.project-title {
+    font-size: 3rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+    background: linear-gradient(135deg, #fff 0%, #e2e8f0 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.project-description {
+    font-size: 1.2rem;
+    margin-bottom: 2.5rem;
+    opacity: 0.9;
+}
+
+/* Buttons */
+.action-buttons {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.action-btn {
+    padding: 1rem 2rem;
+    font-size: 1rem;
+    font-weight: 600;
+    border-radius: 8px;
+    border: none;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+/* CTA Button */
+.cta-btn {
+    /* use hero primary button style */
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    padding: 18px 30px;
+    border-radius: 10px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    text-decoration: none;
+    transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    overflow: hidden;
+    background: linear-gradient(135deg, #FF2D6B, #c4174f);
+    color: white;
+    box-shadow: 0 8px 25px rgba(255, 45, 107, 0.30);
+    border: 1px solid rgba(255, 45, 107, 0.5);
+}
+
+.cta-btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 14px 35px rgba(255, 45, 107, 0.45);
+    background: linear-gradient(135deg, #ff4d82, #FF2D6B);
+    color: white;
+}
+
+/* Hero-style Resume Button */
+.btn {
+    position: relative;
+    padding: 18px 30px;
+    border: none;
+    border-radius: 10px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    cursor: pointer;
+    overflow: hidden;
+    transition: all 0.3s ease;
+}
+
+.btn-secondary {
+    /* hero secondary style (glass) */
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(12px);
+    color: #e8e8e8;
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    font-size: 1.1rem;
+    font-weight: 600;
+}
+
+.btn-secondary:hover {
+    background: rgba(255, 45, 107, 0.10);
+    transform: translateY(-3px);
+    box-shadow: 0 10px 25px rgba(255, 45, 107, 0.15);
+    border-color: rgba(255, 45, 107, 0.40);
+    color: white;
+}
+
+.btn-content {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    position: relative;
+    z-index: 2;
+}
+
+.btn-icon {
+    transition: transform 0.3s ease;
+}
+
+.btn-secondary:hover .btn-icon {
+    transform: translateY(2px);
+}
+
+.btn-shine {
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.15), transparent);
+    transition: left 0.6s ease;
+}
+
+.btn-secondary:hover .btn-shine {
+    left: 100%;
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+    .project-info-section {
+        width: 90%;
+        margin-left: 0;
+    }
+    .project-container {
+        padding: 2rem 1rem;
+    }
+    .project-main {
+        width: 90%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 2rem;
+    }
+    .project-container {
+        padding: 2rem 1rem;
+        border-radius: 27px;
+    }
+    .project-info-content {
+        margin-left: 53px;
+    }
+}
+
+@media (max-width: 768px) {
+    .project-title {
+        font-size: 2.2rem;
+    }
+
+    .project-description {
+        font-size: 1rem;
+    }
+
+    .action-btn, .btn {
+        padding: 0.8rem 1.5rem;
+        font-size: 0.95rem;
+        width: 100%;
+        max-width: 300px;
+    }
+
+    .project-info-section {
+        width: 100%;
+        margin-left: 0;
+        text-align: center;
+    }
+    .project-main {
+        width: 90%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 2rem;
+    }
+    span.btn-text {
+        margin-left: 61px;
+    }
+    .project-container {
+        padding: 2rem 1rem;
+        border-radius: 27px;
+    }
+}
+
+@media (max-width: 480px) {
+    .project-title {
+        font-size: 1.8rem;
+    }
+
+    .project-description {
+        font-size: 0.95rem;
+        margin-bottom: 2rem;
+    }
+
+    .action-btn, .btn {
+        padding: 0.7rem 1rem;
+        font-size: 0.9rem;
+        max-width: 250px;
+    }
+    span.btn-text {
+        margin-left: 49px;
+    }
+    .project-container {
+        padding: 2rem 1rem;
+        border-radius: 27px;
+    }
+    .project-main {
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 2rem;
+        margin-top: -36px;
+        margin-bottom: -35px;
+    }
+    .project-info-content {
+        margin-left: 7px;
+    }
+}

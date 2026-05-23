@@ -1,0 +1,366 @@
+/* ============================================================
+   Contact.css — Technical Mindset + Contact Form
+   Dark Magenta Theme
+   ============================================================ */
+
+* { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; }
+
+/* ============================================================
+   Education / Technical Mindset Section
+   ============================================================ */
+.edu-section {
+  background: #08080f;
+  padding: 100px 40px;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Top-right glow */
+.edu-section::before {
+  content: '';
+  position: absolute;
+  top: -100px; right: -100px;
+  width: 480px; height: 480px;
+  background: radial-gradient(circle, rgba(130, 20, 80, 0.20) 0%, transparent 70%);
+  pointer-events: none;
+}
+
+/* Card */
+.edu-card {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  min-height: 480px;
+  border-radius: 20px;
+  overflow: hidden;
+  opacity: 0;
+  transform: translateY(32px);
+  transition: opacity 0.8s ease, transform 0.8s ease;
+  position: relative;
+  z-index: 1;
+}
+.edu-card.animate {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Left: text */
+.edu-text-side {
+  background: linear-gradient(145deg, #0d0a1c 0%, #0a0810 100%);
+  padding: 60px 52px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
+}
+.edu-text-side::before {
+  content: '';
+  position: absolute;
+  top: -50px; left: -50px;
+  width: 260px; height: 260px;
+  background: radial-gradient(circle, rgba(100, 30, 120, 0.18) 0%, transparent 70%);
+  pointer-events: none;
+}
+
+/* ANALYTICAL CORE pill */
+.edu-pill {
+  display: inline-block;
+  font-size: 0.62rem;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  color: #777;
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  border-radius: 20px;
+  padding: 7px 20px;
+  margin-bottom: 28px;
+  width: fit-content;
+}
+
+/* Heading */
+.edu-title {
+  font-size: clamp(2rem, 4vw, 3rem);
+  font-weight: 700;
+  color: #ffffff;
+  line-height: 1.15;
+  margin-bottom: 28px;
+}
+.edu-accent {
+  color: #7c6ef5;   /* blue-purple matching image */
+}
+
+/* Degree */
+.edu-degree {
+  font-size: 1.05rem;
+  font-weight: 500;
+  color: #d0d0d0;
+  margin-bottom: 20px;
+  letter-spacing: 0.02em;
+}
+
+/* Description paras */
+.edu-desc {
+  font-size: 0.92rem;
+  color: #888;
+  line-height: 1.75;
+  margin-bottom: 14px;
+  opacity: 0;
+  transform: translateY(12px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+.edu-desc.animate {
+  opacity: 1;
+  transform: translateY(0);
+}
+.edu-desc strong {
+  color: #d0d0d0;
+  font-weight: 700;
+}
+
+/* Slide number */
+.edu-slide-num {
+  position: absolute;
+  bottom: 24px;
+  left: 52px;
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: #333;
+}
+
+/* Right: image */
+.edu-img-side {
+  position: relative;
+  overflow: hidden;
+}
+.edu-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  filter: brightness(0.50) saturate(0.7);
+  transition: transform 0.6s ease;
+}
+.edu-card:hover .edu-img {
+  transform: scale(1.03);
+}
+.edu-img-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(270deg, transparent 50%, #0d0a1c 100%);
+}
+
+
+/* ============================================================
+   Contact Form Section
+   ============================================================ */
+.contact {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 80px 20px;
+  background: #08080f;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Bottom-left glow */
+.contact::before {
+  content: '';
+  position: absolute;
+  bottom: -100px; left: -100px;
+  width: 400px; height: 400px;
+  background: radial-gradient(circle, rgba(130, 20, 80, 0.16) 0%, transparent 70%);
+  pointer-events: none;
+}
+
+.contact-container {
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.07);
+  border-radius: 20px;
+  width: 100%;
+  max-width: 680px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  z-index: 1;
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.8s ease, transform 0.8s ease;
+}
+.contact-container.animate-container {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Header */
+.contact-header {
+  padding: 40px 40px 24px;
+  text-align: center;
+  opacity: 0;
+  transform: translateY(16px);
+  transition: opacity 0.8s ease 0.1s, transform 0.8s ease 0.1s;
+}
+.contact-header.animate-header {
+  opacity: 1;
+  transform: translateY(0);
+}
+.contact-header h2 {
+  font-size: clamp(1.8rem, 4vw, 2.4rem);
+  font-weight: 700;
+  color: #ffffff;
+  margin-bottom: 10px;
+}
+.contact-accent {
+  color: #FF2D6B;
+}
+.contact-subtitle {
+  font-size: 0.95rem;
+  color: #888;
+  line-height: 1.6;
+}
+
+/* Content */
+.contact-content {
+  opacity: 0;
+  transform: translateY(16px);
+  transition: opacity 0.8s ease 0.2s, transform 0.8s ease 0.2s;
+}
+.contact-content.animate-content {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Form */
+.contact-form {
+  padding: 10px 40px 40px;
+}
+
+.form-group {
+  margin-bottom: 18px;
+  position: relative;
+}
+
+.form-group input,
+.form-group textarea {
+  width: 100%;
+  padding: 14px 44px 14px 16px;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.10);
+  border-radius: 10px;
+  font-size: 0.95rem;
+  color: #e8e8e8;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease, background 0.3s ease;
+}
+.form-group input::placeholder,
+.form-group textarea::placeholder {
+  color: #555;
+}
+.form-group input:focus,
+.form-group textarea:focus {
+  border-color: rgba(255, 45, 107, 0.50);
+  box-shadow: 0 0 0 3px rgba(255, 45, 107, 0.08);
+  background: rgba(255, 255, 255, 0.07);
+  outline: none;
+}
+
+.form-group i {
+  position: absolute;
+  right: 16px;
+  top: 16px;
+  color: #444;
+  font-size: 0.9rem;
+}
+
+textarea {
+  min-height: 140px;
+  resize: vertical;
+}
+
+/* Submit button */
+.contact-form button {
+  background: linear-gradient(135deg, #FF2D6B, #c4174f);
+  color: white;
+  border: none;
+  padding: 15px 30px;
+  border-radius: 10px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  width: 100%;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  margin-top: 4px;
+  box-shadow: 0 6px 20px rgba(255, 45, 107, 0.28);
+}
+.contact-form button:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 12px 28px rgba(255, 45, 107, 0.45);
+}
+.contact-form button:disabled {
+  opacity: 0.65;
+  cursor: not-allowed;
+  transform: none;
+}
+
+/* Staggered fields */
+.contact-form .form-group {
+  animation: fadeInUp 0.5s forwards;
+  opacity: 0;
+}
+.contact-form .form-group:nth-child(1) { animation-delay: 0.3s; }
+.contact-form .form-group:nth-child(2) { animation-delay: 0.45s; }
+.contact-form .form-group:nth-child(3) { animation-delay: 0.6s; }
+.contact-form button {
+  animation: fadeInUp 0.5s forwards;
+  animation-delay: 0.75s;
+  opacity: 0;
+}
+
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(20px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+/* ============================================================
+   Responsive
+   ============================================================ */
+@media (max-width: 900px) {
+  .edu-card {
+    grid-template-columns: 1fr;
+    min-height: auto;
+  }
+  .edu-img-side { height: 260px; }
+  .edu-img-overlay {
+    background: linear-gradient(180deg, transparent 50%, #0d0a1c 100%);
+  }
+  .edu-text-side { padding: 44px 36px; }
+  .edu-slide-num { left: 36px; }
+}
+
+@media (max-width: 768px) {
+  .edu-section { padding: 70px 20px; }
+  .edu-text-side { padding: 36px 28px; }
+  .edu-title { font-size: 2rem; }
+  .edu-img-side { height: 220px; }
+  .contact { padding: 60px 16px; }
+  .contact-header { padding: 32px 28px 20px; }
+  .contact-form { padding: 10px 28px 32px; }
+}
+
+@media (max-width: 480px) {
+  .edu-section { padding: 56px 16px; }
+  .edu-text-side { padding: 28px 22px; }
+  .edu-title { font-size: 1.7rem; }
+  .edu-img-side { height: 190px; }
+  .edu-slide-num { left: 22px; }
+  .edu-card { border-radius: 14px; }
+  .contact-header { padding: 28px 20px 16px; }
+  .contact-form { padding: 8px 20px 28px; }
+  .contact-form button { font-size: 0.95rem; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .edu-card, .edu-desc, .contact-form .form-group { transition: none; animation: none; opacity: 1; }
+}

@@ -1,0 +1,241 @@
+/* ============================================================
+   Experience.css — Work Experience Cards
+   Dark Magenta Theme
+   ============================================================ */
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+/* ── Section ── */
+.technical-skills {
+  padding: 100px 0;
+  background: #08080f;
+  display: flex;
+  align-items: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.technical-skills::before {
+  content: '';
+  position: absolute;
+  top: -100px; right: -100px;
+  width: 500px; height: 500px;
+  background: radial-gradient(circle, rgba(130, 20, 80, 0.22) 0%, transparent 70%);
+  pointer-events: none;
+  z-index: 0;
+}
+
+.container-experience {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 40px;
+  width: 100%;
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+}
+
+/* ── Card base ── */
+.kesari-card {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  min-height: 480px;
+  border-radius: 20px;
+  overflow: hidden;
+  opacity: 0;
+  transform: translateY(32px);
+  transition: opacity 0.8s ease, transform 0.8s ease;
+}
+.kesari-card.animate {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ── Image side (Kesari: right, MetaFour: right) ── */
+.kesari-img-side {
+  position: relative;
+  overflow: hidden;
+}
+.kesari-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  filter: brightness(0.52) saturate(0.75);
+  transition: transform 0.6s ease;
+}
+.kesari-card:hover .kesari-img {
+  transform: scale(1.03);
+}
+
+/* Kesari: fade right edge into dark panel */
+.kesari-img-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(90deg, transparent 55%, #08080f 100%);
+}
+
+/* MetaFour: fade LEFT edge into dark text panel */
+.metafour-img-overlay {
+  background: linear-gradient(270deg, transparent 55%, #08080f 100%);
+}
+
+/* ── Text side ── */
+.kesari-text-side {
+  background: linear-gradient(145deg, #0f0a1a 0%, #0c0910 100%);
+  padding: 56px 52px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
+}
+.kesari-text-side::before {
+  content: '';
+  position: absolute;
+  top: -60px; right: -60px;
+  width: 280px; height: 280px;
+  background: radial-gradient(circle, rgba(120, 15, 70, 0.22) 0%, transparent 70%);
+  pointer-events: none;
+}
+
+/* MetaFour text: glow on left side */
+.metafour-text-side::before {
+  left: -60px;
+  right: auto;
+}
+
+/* ── Pills ── */
+.kesari-pill {
+  display: inline-block;
+  font-size: 0.62rem;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  color: #777;
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  border-radius: 20px;
+  padding: 7px 20px;
+  margin-bottom: 28px;
+  width: fit-content;
+}
+
+/* MetaFour pill: slightly wider for longer text */
+.metafour-pill {
+  letter-spacing: 0.12em;
+}
+
+/* ── Company name ── */
+.kesari-company {
+  font-size: clamp(1.7rem, 3vw, 2.5rem);
+  font-weight: 700;
+  color: #ffffff;
+  line-height: 1.2;
+  margin-bottom: 10px;
+}
+
+/* ── Role ── */
+.kesari-role {
+  font-size: 1rem;
+  font-weight: 600;
+  color: #00e5a0;       /* green for Kesari */
+  margin-bottom: 34px;
+}
+.metafour-role {
+  color: #5b8df0;       /* blue for MetaFour, matching image */
+}
+
+/* ── Highlights ── */
+.kesari-highlights {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+.kesari-highlights li {
+  display: flex;
+  align-items: flex-start;
+  gap: 14px;
+  font-size: 0.95rem;
+  color: #c8c8c8;
+  line-height: 1.65;
+  opacity: 0;
+  transform: translateX(16px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+.kesari-highlights li.animate {
+  opacity: 1;
+  transform: translateX(0);
+}
+.kesari-arrow {
+  color: #FF2D6B;
+  font-weight: 700;
+  font-size: 1rem;
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+
+/* ── Global animate compat ── */
+.animate {
+  opacity: 1 !important;
+  transform: none !important;
+}
+
+/* ============================================================
+   Responsive
+   ============================================================ */
+@media (max-width: 900px) {
+  .kesari-card {
+    grid-template-columns: 1fr;
+    min-height: auto;
+  }
+  /* MetaFour: image goes below text on mobile */
+  .metafour-card {
+    direction: ltr;
+  }
+  .metafour-text-side {
+    order: 1;
+  }
+  .metafour-img-side {
+    order: 2;
+  }
+  .kesari-img-side,
+  .metafour-img-side {
+    height: 260px;
+  }
+  .kesari-img-overlay {
+    background: linear-gradient(180deg, transparent 55%, #08080f 100%);
+  }
+  .metafour-img-overlay {
+    background: linear-gradient(180deg, transparent 55%, #08080f 100%);
+  }
+  .kesari-text-side {
+    padding: 44px 36px;
+  }
+}
+
+@media (max-width: 768px) {
+  .technical-skills { padding: 70px 0; }
+  .container-experience { padding: 0 20px; gap: 28px; }
+  .kesari-img-side,
+  .metafour-img-side { height: 220px; }
+  .kesari-text-side { padding: 36px 28px; }
+  .kesari-company { font-size: 1.8rem; }
+}
+
+@media (max-width: 480px) {
+  .technical-skills { padding: 56px 0; }
+  .container-experience { padding: 0 16px; gap: 20px; }
+  .kesari-img-side,
+  .metafour-img-side { height: 190px; }
+  .kesari-text-side { padding: 28px 22px; }
+  .kesari-company { font-size: 1.5rem; }
+  .kesari-highlights li { font-size: 0.88rem; }
+  .kesari-card { border-radius: 14px; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .kesari-card,
+  .kesari-highlights li { transition: none; }
+}

@@ -1,0 +1,104 @@
+/* CSS Normalization for consistent rendering across browsers and deployment environments */
+
+/* Prevent font size inflation on mobile devices */
+html {
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  text-size-adjust: 100%;
+}
+
+/* Ensure consistent box-sizing */
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+/* Remove default margins and padding */
+* {
+  margin: 0;
+  padding: 0;
+}
+
+/* Prevent horizontal scrolling */
+html, body {
+  overflow-x: hidden;
+  max-width: 100%;
+}
+
+/* Ensure consistent font rendering */
+body {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+}
+
+/* Prevent zoom on input focus on mobile */
+input, textarea, select {
+  font-size: 16px;
+}
+
+/* Ensure images are responsive */
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* Prevent layout shifts */
+video, canvas, svg {
+  max-width: 100%;
+  height: auto;
+}
+
+/* Consistent line heights */
+h1, h2, h3, h4, h5, h6 {
+  line-height: 1.2;
+}
+
+/* Consistent button styling */
+button {
+  font-family: inherit;
+  font-size: inherit;
+  line-height: inherit;
+}
+
+/* Consistent link styling */
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+/* Consistent list styling */
+ul, ol {
+  list-style: none;
+}
+
+/* Consistent table styling */
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+/* Consistent form element styling */
+input, button, textarea, select {
+  font: inherit;
+  color: inherit;
+}
+
+/* Remove default button styling */
+button {
+  background: none;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+}
+
+/* Ensure consistent focus styles */
+:focus {
+  outline: 2px solid #4776E6;
+  outline-offset: 2px;
+}
+
+/* Remove focus outline for mouse users */
+:focus:not(:focus-visible) {
+  outline: none;
+}

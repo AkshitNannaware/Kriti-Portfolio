@@ -1,0 +1,34 @@
+/* Global responsive safeguards */
+html {
+  max-width: 100%;
+  overflow-x: hidden;
+  font-size: 16px; /* ensures rem units are consistent */
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  text-size-adjust: 100%;
+}
+
+img, video, canvas {
+  max-width: 100%;
+  height: auto;
+}
+
+/* Smooth font scaling */
+:root {
+  --space-section: clamp(40px, 7vw, 100px);
+}
+
+/* Reset CSS - Single declaration */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  font-size: 16px;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
