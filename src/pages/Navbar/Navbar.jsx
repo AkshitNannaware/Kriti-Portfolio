@@ -118,7 +118,7 @@ function Navbar() {
             </a>
             <a href="#projects" className="bottom-nav-link" onClick={closeMobileMenu}>
               <span className="nav-icon"><FaBriefcase /></span>
-              <span>Projects</span>
+              <span>Work</span>
             </a>
             <a href="#technical-skills" className="bottom-nav-link" onClick={closeMobileMenu}>
               <span className="nav-icon"><BsFileEarmarkTextFill /></span>
@@ -126,7 +126,7 @@ function Navbar() {
             </a>
             <a href="#contact" className="bottom-nav-link" onClick={closeMobileMenu}>
               <span className="nav-icon"><MdEmail /></span>
-              <span>Contact</span>
+              <span>Education</span>
             </a>
           </div>
         </nav>
